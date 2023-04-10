@@ -1,34 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
-let my_name="<h2> Vaibhav </h2>";
+// import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+import Navbar from "./componets/Navbar";
+import TextForm from "./componets/TextForm";
+import About from "./componets/About"
+import Alert from "./componets/Alert";
+
+// import { Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
+  const [mode, setMode] = useState("light");
+  const toggleMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode is Enabaled", "success");
+      document.title = "Text-Utils : light mode";
+
+
+
+    }
+    else {
+      setMode("dark");
+      document.body.style.backgroundColor = "rgb(52 41 77)";
+      showAlert("Dark mode is Enabaled", "success");
+      document.title = "Text-Utils : dark mode";
+    }
+  }
+  const [alert, setAlert] = useState("this", "va");
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+      setAlert(null);
+
+    }, 1500);
+  }
+
   return (
-      <>
-       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">TextUtils</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">About us</a>
-        </li>
-      </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-      </>
-     
+    <>
+      <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3" >
+        <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
+      </div>
+      <About />
+
+
+      {/* <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} /> */}
+
+      {/* <Routes>
+        <Route exact path="/" element={ <div className="container my-3" >
+        <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
+      </div>} />
+        <Route exact path="/about" element={<About />} />
+      </Routes> */}
+
+
+    </>
   );
 }
 
