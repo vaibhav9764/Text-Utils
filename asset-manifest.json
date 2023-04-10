@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vaibhav9764.github.io/Text-Utils/static/css/main.e6c13ad2.css",
+    "main.js": "/vaibhav9764.github.io/Text-Utils/static/js/main.3adc721f.js",
+    "static/js/787.719ec76d.chunk.js": "/vaibhav9764.github.io/Text-Utils/static/js/787.719ec76d.chunk.js",
+    "index.html": "/vaibhav9764.github.io/Text-Utils/index.html",
+    "main.e6c13ad2.css.map": "/vaibhav9764.github.io/Text-Utils/static/css/main.e6c13ad2.css.map",
+    "main.3adc721f.js.map": "/vaibhav9764.github.io/Text-Utils/static/js/main.3adc721f.js.map",
+    "787.719ec76d.chunk.js.map": "/vaibhav9764.github.io/Text-Utils/static/js/787.719ec76d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3adc721f.js"
+  ]
+}
