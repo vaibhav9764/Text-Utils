@@ -1,43 +1,48 @@
 import React, { useState } from 'react'
 
-export default function About() {
-    const [myStyle, setMyStyle] = useState({
-        color: "black",
-        backgroundColor: "white"
+export default function About(prop) {
+    // const [myStyle, setMyStyle] = useState({
+    //     color: "black",
+    //     backgroundColor: "white"
+
+    // }
+
+    // );
+    let myStyle ={
+        color: prop.mode=== "dark" ? "white": "black",
+    backgroundColor: prop.mode=== "dark" ? "#2c4178": "white"
 
     }
+    // const [btnText, setBtnText] = useState("Enable Dark Mode");
 
-    );
-    const [btnText, setBtnText] = useState("Enable Dark Mode");
+    // const toggleText = () => {
+    //     if (myStyle.color === "white") {
+    //         setBtnText("Enable Dark Mode")
+    //     }
+    //     else {
+    //         setBtnText("Enable light Mode")
+    //     }
+    // }
+    // const handleOnClick = (event) => {
+    //     if (myStyle.color === "white") {
+    //         setMyStyle({
+    //             color: "black",
+    //             backgroundColor: "white"
 
-    const toggleText = () => {
-        if (myStyle.color === "white") {
-            setBtnText("Enable Dark Mode")
-        }
-        else {
-            setBtnText("Enable light Mode")
-        }
-    }
-    const handleOnClick = (event) => {
-        if (myStyle.color === "white") {
-            setMyStyle({
-                color: "black",
-                backgroundColor: "white"
+    //         })
+    //         toggleText();
+    //     }
+    //     else {
+    //         setMyStyle({
+    //             color: "white",
+    //             backgroundColor: "black",
+    //             border: "2px solid white"
+    //         })
+    //         toggleText();
 
-            })
-            toggleText();
-        }
-        else {
-            setMyStyle({
-                color: "white",
-                backgroundColor: "black",
-                border: "2px solid white"
-            })
-            toggleText();
+    //     }
 
-        }
-
-    }
+    // }
 
     return (
         <>
@@ -81,7 +86,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <button type="button" onClick={handleOnClick} className="btn my-3 btn-primary" >{btnText}</button>
+            
 
             </div>
 

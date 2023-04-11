@@ -17,7 +17,7 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode is Enabaled", "success");
-      document.title = "Text-Utils : light mode";
+      // document.title = "Text-Utils : light mode";
 
 
 
@@ -26,7 +26,7 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "rgb(52 41 77)";
       showAlert("Dark mode is Enabaled", "success");
-      document.title = "Text-Utils : dark mode";
+      // document.title = "Text-Utils : dark mode";
     }
   }
   const [alert, setAlert] = useState("this", "va");
@@ -48,7 +48,7 @@ function App() {
       <div className="container my-3" >
         <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
       </div>
-      <About />
+      <About mode={mode} />
 
 
       {/* <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
