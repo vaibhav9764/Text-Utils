@@ -6,7 +6,7 @@ import TextForm from "./componets/TextForm";
 import About from "./componets/About"
 import Alert from "./componets/Alert";
 
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -43,23 +43,26 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
+      {/* <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3" >
         <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
       </div>
-      <About mode={mode} />
+      <About mode={mode} /> */}
 
 
-      {/* <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} /> */}
+      <Navbar title="TextUtils" aboutText="About Me" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
 
-      {/* <Routes>
+      <Routes>
+        <Route exact path="/Text-Utils" element={<div className="container my-3" >
+        <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
+      </div>}></Route>
         <Route exact path="/" element={ <div className="container my-3" >
         <TextForm heading="Enter The Text below" mode={mode} showAlert={showAlert} />
       </div>} />
-        <Route exact path="/about" element={<About />} />
-      </Routes> */}
+        <Route exact path="/about" element={<About mode={mode} />} />
+      </Routes>
 
 
     </>
