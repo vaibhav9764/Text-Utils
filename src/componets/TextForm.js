@@ -40,8 +40,8 @@ export default function TextForm(prop) {
             </div>
             <div className="container" style={{color:prop.mode==="dark"?"white":"black"}}>
                 <h3>Text Summary</h3>
-                <p> {text.split(" ").filter((element)=>{return element.length!=0}).length} word , {text.length} character  </p>
-                <p>{text.split(" ").filter((element)=>{return element.length!=0}).length*0.008} minitue to read</p>
+                <p> {text.split(/\s+/).filter((element)=>{return element.length!=0}).length} word , {text.length} character  </p>
+                <p>{text.split(/\s+/git).filter((element)=>{return element.length!=0}).length*0.008} minitue to read</p>
                 <h4>Preview</h4>
                 <p>{text}</p>
             </div>
